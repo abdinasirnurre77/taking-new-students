@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="so">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="sidebar">
+        <h2>Badbaado Collage</h2>
+        <ul>
+            <li onclick="navigateTo('home')"><i class="fas fa-home"></i> Hoyga</li>
+            <li onclick="navigateTo('add')"><i class="fas fa-user-plus"></i> Add Student</li>
+            <li onclick="navigateTo('list')"><i class="fas fa-users"></i> Student List</li>
+            <li onclick="navigateTo('stats')"><i class="fas fa-chart-line"></i> Analytics</li>
+            <li onclick="navigateTo('about')"><i class="fas fa-info-circle"></i> About</li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section id="home" class="page active">
+            <div class="hero-card">
+                <h1>Ku soo dhawaaw SMS Dashboard</h1>
+                <p>Maanta waa: <span id="currentDate"></span></p>
+                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80"
+                    alt="Education" class="hero-img">
+            </div>
+        </section>
+
+        <section id="add" class="page">
+            <div class="card">
+                <h2>Diiwaangeli Arday Cusub</h2>
+                <div class="form-group">
+                    <input type="text" id="stuName" placeholder="Magaca oo buuxa">
+                    <input type="number" id="stuAge" placeholder="Da'da">
+                    <select id="stuCourse">
+                        <option value="">-- Dooro Kooska --</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Business Admin">Business Admin</option>
+                    </select>
+                    <button onclick="handleAddStudent()">Keydi Ardayga</button>
+                    <p id="feedbackMsg"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="list" class="page">
+            <h2>Liiska Ardayda</h2>
+            <div class="card table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Magaca</th>
+                            <th>Da'da</th>
+                            <th>Kooska</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="stats" class="page">
+            <h2>Warbixinta Guud</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Total Students</h3>
+                    <p id="totalCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Over 20 Years</h3>
+                    <p id="seniorCount">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="page">
+            <div class="card">
+                <h2>About the Project</h2>
+                <p>Nidaamkan waxaa lagu dhisay <strong>HTML, CSS, iyo Vanilla JavaScript</strong>.</p>
+                <ul class="tech-list">
+                    <li><i class="fas fa-check"></i> No Frameworks</li>
+                    <li><i class="fas fa-check"></i> DOM Manipulation</li>
+                    <li><i class="fas fa-check"></i> Local Storage Data</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
